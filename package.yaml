@@ -1,0 +1,24 @@
+name: pahomqtt
+description: 非常快超轻量级的 C 语言开发的 XNL 解析库
+keywords:
+  - XML
+author:
+  name: Dave Gamble (original author), Max Bruckner (current maintainer)
+license: MIT                                   # GPLv2，LGPLv2.1，MIT，Apache license v2.0，BSD
+
+depends:                                       # 该组件依赖其他的组件
+  - libc
+
+source_file:
+  - "MQTTPacket/*.c"
+  - "MQTTClient/*.cxx"
+
+build_config:
+  include:
+    - MQTTPacket
+  cflag: ""                             # C 编译器所需要要的编译参数
+
+install:
+  - dest: "include/"
+    source:
+      - src/*.h
